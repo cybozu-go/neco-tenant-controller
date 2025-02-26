@@ -7,8 +7,8 @@ inputs:
 runs:
   using: composite
   steps:
-    - uses: aquaproj/aqua-installer@7c7338067bdb97d5bea2acc82b5870afca470d18 # v2.3.0
+    - uses: aquaproj/aqua-installer@f13c5d2f0357708d85477aabe50fd3f725528745 # 3.1.0
       with:
-        aqua_version: v2.22.0
+        aqua_version: v2.44.1
       env:
         GITHUB_TOKEN: ${{ inputs.github_token }}

@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     name: Build binaries
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-go@v5
@@ -20,7 +20,7 @@ jobs:
     - run: make build
   check-goreleaser-config:
     name: Check goreleaser.yml
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - name: Setup go
@@ -34,7 +34,7 @@ jobs:
           args: check -f .goreleaser.yml
   test:
     name: Small tests
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-go@v5
@@ -52,10 +52,10 @@ jobs:
     strategy:
       matrix:
         k8s-version:
-          - v1.28.13 # renovate: kindest/node
-          - v1.29.8 # renovate: kindest/node
-          - v1.30.4 # renovate: kindest/node
-    runs-on: ubuntu-22.04
+          - v1.29.14 # renovate: kindest/node
+          - v1.30.10 # renovate: kindest/node
+          - v1.31.6 # renovate: kindest/node
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-go@v5
@@ -79,7 +79,7 @@ jobs:
         path: e2e/logs.tar.gz
   tilt:
     name: Run tilt ci
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
@@ -93,7 +93,7 @@ jobs:
       - run: tilt ci
   dry-run:
     name: Dry-run release
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
