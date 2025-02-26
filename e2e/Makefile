@@ -1,4 +1,4 @@
-KUBERNETES_VERSION = v1.30.4 # renovate: kindest/node
+KUBERNETES_VERSION = v1.31.6 # renovate: kindest/node
 
 KIND_CONFIG = kind-config.yaml
 export KUBECONFIG
